@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name = "viewport" , content="width-device-width">
+        <title>TILE FLIP</title>
+    </head>
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:grey;
+}
+
+.tile-game {
+  width: 650px;
+  height: 650px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.tile:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.tile.flip {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background:black;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+    </style>
+    <body>
+        <script src="tileFlip.js"></script>
+    </body>
+
+</html>
